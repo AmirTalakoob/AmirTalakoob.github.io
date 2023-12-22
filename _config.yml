@@ -1,30 +1,27 @@
 # site settings
 
-title: cvless
-description: Jekyll theme for a beautiful online CV
-taglong: Jekyll theme for a beautiful online CV
-tagshort: Jekyll theme
-url: https://cvless.netlify.app
+title: Amir Talakoob
+description: Projects and CV
+taglong: Webpage for projects and online CV
+tagshort: Projects and CV
+url: https://amirtalakoob.github.io
 baseurl: ""
 permalink: pretty
-repo: https://github.com/username/username.github.io
+repo: https://github.com/amirtalakoob/amirtalakoob.github.io
 
 # author settings
 
 author:
-  name: Place Holder
-  email: username@domain.com
+  name: Amir Talakoob
+  email: amirtalakoob@csus.edu
 photo: /assets/jpg/photo.jpg
 
 # social media links
 
 social:
-  facebook: username
-  github: username
-  instagram: username
-  linkedin: username
-  stackoverflow: 0000000/username
-  twitter: username
+  github: AmirTalakoob
+  instagram: amir__talakoob
+  linkedin: Amir Talakoob
 
 # build settings
 
