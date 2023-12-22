@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What Jekyll is
+title: Machine Learning Project 1
 lead: A short post to demonstrate the layout.
 ---
 
