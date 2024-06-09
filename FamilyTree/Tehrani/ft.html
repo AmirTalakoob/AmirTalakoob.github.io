@@ -17,7 +17,7 @@
 
 
         <script>
-            function createItem(name1, name2, tag, createNestedUL) {
+            function createItem(name1, name2, tag, createNestedUL, dob = "", dod = "") {
                 var listItem = document.createElement('li');
 
                 // Create anchor element
@@ -52,9 +52,22 @@
 
                 // Create h3 element for names
                 var nameElement = document.createElement('h3');
+                nameElement.className = "name-details";
                 nameElement.innerHTML = name1 + "<br>" + name2;
                 memberDetails.appendChild(nameElement);
 
+                if (dob!==""){
+                    var dateElement = document.createElement('h3');
+                    dateElement.className = "date-details";
+                    dateElement.innerHTML = "(" + dob + "-" + dod + ")";
+                    nameElement.appendChild(dateElement);
+                }
+                else {
+                    var dateElement = document.createElement('h3');
+                    dateElement.className = "date-details";
+                    dateElement.innerHTML = dob + dod;
+                    nameElement.appendChild(dateElement);
+                }
                 // Check if nested UL should be created
                 if (createNestedUL) {
                     // Create nested UL element
@@ -67,7 +80,6 @@
 
                 return listItem;
             }
-
 
             document.getElementById('origin').appendChild(createItem('سید محمد اخوی تهرانی', '', '1', true));
 
@@ -88,7 +100,7 @@
 
             document.getElementById('9').appendChild(createItem('رقیه بیگم', '', '11', true));
 
-            document.getElementById('11').appendChild(createItem('سید محمد', 'سید رضای طهرانی', '12', true));
+            document.getElementById('11').appendChild(createItem('سید محمد', 'سید رضای طهرانی', '12', true, "\u06F1\u06F2\u06F6\u06F6", "\u06F1\u06F3\u06F1\u06F7"));
             document.getElementById('11').appendChild(createItem('سید حاج اسماعیل', 'سید رضای طهرانی', '13', true));
             document.getElementById('11').appendChild(createItem('سید جلیل', 'سید رضای طهرانی', '14', false));
             document.getElementById('11').appendChild(createItem('محترم سادات', 'سید رضای طهرانی', '15', false));
@@ -125,14 +137,14 @@
 
             document.getElementById('26').appendChild(createItem('؟؟؟', '', '34', false));
 
-            document.getElementById('12').appendChild(createItem('سکینه رضایی / طهرانی', '', '35', true));
+            document.getElementById('12').appendChild(createItem('سکینه رضایی / طهرانی', '', '35', true, "\u06F1\u06F2\u06F7\u06F9",  "\u06F1\u06F3\u06F4\u06F3"));
 
-            document.getElementById('35').appendChild(createItem('سید علی اکبر', '', '36', true));
+            document.getElementById('35').appendChild(createItem('سید علی اکبر', '', '36', true, "\u06F1\u06F3\u06F0\u06F0", "\u06F1\u06F3\u06F6\u06F5"));
             document.getElementById('35').appendChild(createItem('سید حسین', '', '37', true));
-            document.getElementById('35').appendChild(createItem('سیده معصومه / مهری', '', '38', true));
-            document.getElementById('35').appendChild(createItem('سیده فاطمه / مهین', '', '39', true));
+            document.getElementById('35').appendChild(createItem('سیده معصومه / مهری', '', '38', true, "\u06F1\u06F3\u06F1\u06F2", "\u06F1\u06F3\u06F6\u06F9"));
+            document.getElementById('35').appendChild(createItem('سیده فاطمه / مهین', '', '39', true, "\u06F1\u06F3\u06F1\u06F6", "\u06F1\u06F3\u06F9\u06F3"));
 
-            document.getElementById('39').appendChild(createItem('غلامرضا چکشیان', '', '40', true));
+            document.getElementById('39').appendChild(createItem('غلامرضا چکشیان', '', '40', true, "\u06F1\u06F3\u06F0\u06F9", "\u06F1\u06F3\u06F9\u06F8"));
 
             document.getElementById('40').appendChild(createItem('زهره', '', '41', true));
             document.getElementById('40').appendChild(createItem('زهرا / سهیلا', '', '42', true));
@@ -168,7 +180,7 @@
 
             document.getElementById('59').appendChild(createItem('محمدرضا', '', '60', false));
 
-            document.getElementById('38').appendChild(createItem('علی اکبر طلاکوب', '', '61', true));
+            document.getElementById('38').appendChild(createItem('علی اکبر طلاکوب', '', '61', true, "\u06F1\u06F3\u06F0\u06F1", "\u06F1\u06F3\u06F7\u06F2"));
 
             document.getElementById('61').appendChild(createItem('مریم', '', '62', false));
             document.getElementById('61').appendChild(createItem('محمدرضا', '', '63', true));
@@ -192,7 +204,7 @@
             document.getElementById('72').appendChild(createItem('سید آدرین', '', '73', false));
             document.getElementById('72').appendChild(createItem('؟؟؟', '', '144', false));
 
-            document.getElementById('36').appendChild(createItem('منصوره رفشا', '', '74', true));
+            document.getElementById('36').appendChild(createItem('منصوره رفشا', '', '74', true, "\u06F1\u06F3\u06F1\u06F0", "\u06F1\u06F3\u06F8\u06F0"));
 
             document.getElementById('74').appendChild(createItem('نوری السادات / زهرا', '', '75', true));
             document.getElementById('74').appendChild(createItem('منیرالسادات / حوریه', '', '76', true));
@@ -247,7 +259,7 @@
 
             document.getElementById('107').appendChild(createItem('فاطمه حُسنا', '', '108', false));
 
-            document.getElementById('76').appendChild(createItem('محمدهادی رستا', '', '109', true));
+            document.getElementById('76').appendChild(createItem('محمدهادی رستا', '', '109', true, "\u06F1\u06F2\u06F9\u06F0", "\u06F1\u06F3\u06F7\u06F3"));
 
             document.getElementById('109').appendChild(createItem('ماه منیر', '', '110', true));
             document.getElementById('109').appendChild(createItem('مهرآفرین', '', '111', true));
@@ -260,7 +272,7 @@
 
             document.getElementById('111').appendChild(createItem('علیرضا زیبایی', '', '115', false));
 
-            document.getElementById('77').appendChild(createItem('سید مصطفی حسینی ایزدی', '', '116', true));
+            document.getElementById('77').appendChild(createItem('سید مصطفی', 'حسینی ایزدی', '116', true, "\u06F1\u06F3\u06F0\u06F9", "\u06F1\u06F3\u06F8\u06F4"));
 
             document.getElementById('116').appendChild(createItem('نغمه / فاطمه سادات', '', '117', true));
             document.getElementById('116').appendChild(createItem('نیکو سادات', '', '118', true));

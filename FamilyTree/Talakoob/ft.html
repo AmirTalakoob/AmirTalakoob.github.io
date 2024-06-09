@@ -17,7 +17,7 @@
 
 
         <script>
-            function createItem(name1, name2, tag, createNestedUL) {
+            function createItem(name1, name2, tag, createNestedUL, dob = "", dod = "") {
                 var listItem = document.createElement('li');
 
                 // Create anchor element
@@ -52,9 +52,22 @@
 
                 // Create h3 element for names
                 var nameElement = document.createElement('h3');
+                nameElement.className = "name-details";
                 nameElement.innerHTML = name1 + "<br>" + name2;
                 memberDetails.appendChild(nameElement);
 
+                if (dob!==""){
+                    var dateElement = document.createElement('h3');
+                    dateElement.className = "date-details";
+                    dateElement.innerHTML = "(" + dob + "-" + dod + ")";
+                    nameElement.appendChild(dateElement);
+                }
+                else {
+                    var dateElement = document.createElement('h3');
+                    dateElement.className = "date-details";
+                    dateElement.innerHTML = dob + dod;
+                    nameElement.appendChild(dateElement);
+                }
                 // Check if nested UL should be created
                 if (createNestedUL) {
                     // Create nested UL element
@@ -122,7 +135,7 @@
 
             document.getElementById('32').appendChild(createItem('فروغ', '', '33', true));
             document.getElementById('32').appendChild(createItem('بهجت', '', '34', true));
-            document.getElementById('32').appendChild(createItem('بدری', '', '35', true));
+            document.getElementById('32').appendChild(createItem('ربابه/بدری', '', '35', true, "\u06F1\u06F3\u06F1\u06F3", "\u06F1\u06F3\u06F9\u06F3"));
             document.getElementById('32').appendChild(createItem('شمسی', '', '36', true));
             document.getElementById('32').appendChild(createItem('توران', '', '37', true));
             document.getElementById('32').appendChild(createItem('هما', '', '38', true));
@@ -137,7 +150,7 @@
 
             document.getElementById('34').appendChild(createItem('؟؟؟ گرجی', '', '45', false));
 
-            document.getElementById('35').appendChild(createItem('؟؟؟ رهبری', '', '46', true));
+            document.getElementById('35').appendChild(createItem('غلامحسین رهبری', '', '46', true, "\u06F1\u06F3\u06F0\u06F6", "\u06F1\u06F3\u06F7\u06F6"));
 
             document.getElementById('46').appendChild(createItem('عبدالوهاب', '', '47', true));
             document.getElementById('46').appendChild(createItem('بهروز', '', '48', false));

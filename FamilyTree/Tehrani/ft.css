@@ -102,22 +102,32 @@
 }
 
 /*--------------memeber-card-design----------*/
-.member-view-box{
-    padding:0px 20px;
+.member-view-box {
+    width: 110px; /* Set the desired width */
+    height: 150px; /* Set the desired height */
+    padding: 20px; /* Padding for better spacing */
     text-align: center;
-    border-radius: 4px;
+    border-radius: 8px; /* Smoother corner radius */
     position: relative;
+    border: 2px solid #ccc; /* Light grey border */
+    background-color: #f9f9f9; /* Light grey background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
 }
-.member-image{
+
+.member-image {
     width: 60px;
     position: relative;
+    margin: 0 auto; /* Center the image within its container */
+    display: block; /* Ensure it takes up the width specified */
 }
-.member-image img{
+
+.member-image img {
     width: 60px;
     height: 60px;
-    border-radius: 6px;
-  background-color :#000;
-  z-index: 1;
+    border-radius: 50%; /* Circular image */
+    background-color: #000; /* Black background */
+    z-index: 1;
+    border: 2px solid #fff; /* White border around the image */
 }
 /*-------------------------------------------*/
 body, div, p, h1, h2, h3 {
