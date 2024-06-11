@@ -129,6 +129,10 @@
     z-index: 1;
     border: 2px solid #fff; /* White border around the image */
 }
+
+.date-details {
+	font-weight: bold;
+}
 /*-------------------------------------------*/
 body, div, p, h1, h2, h3 {
     text-align: center !important;
