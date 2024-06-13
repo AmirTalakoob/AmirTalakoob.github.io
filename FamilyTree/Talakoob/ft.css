@@ -1,5 +1,4 @@
 /*----------------genealogy-scroll----------*/
-
 .genealogy-scroll::-webkit-scrollbar {
     width: 5px;
     height: 8px;
@@ -18,9 +17,8 @@
     transition: 0.5s;
 }
 
-
 /*----------------genealogy-tree----------*/
-.genealogy-body{
+.genealogy-body {
     white-space: nowrap;
     overflow-y: hidden;
     padding: 50px;
@@ -28,8 +26,8 @@
     padding-top: 10px;
     text-align: center;
 }
-.genealogy-tree{
-  display: inline-block;
+.genealogy-tree {
+    display: inline-block;
 }
 .genealogy-tree ul {
     padding-top: 20px; 
@@ -39,51 +37,56 @@
     justify-content: center;
 }
 .genealogy-tree li {
-    float: left; text-align: center;
+    float: left; 
+    text-align: center;
     list-style-type: none;
     position: relative;
     padding: 20px 5px 0 5px;
 }
-.genealogy-tree li::before, .genealogy-tree li::after{
+.genealogy-tree li::before, .genealogy-tree li::after {
     content: '';
     position: absolute; 
-  top: 0; 
-  right: 50%;
+    top: 0; 
+    right: 50%;
     border-top: 2px solid #ccc;
     width: 50%; 
-  height: 18px;
+    height: 18px;
 }
-.genealogy-tree li::after{
-    right: auto; left: 50%;
+.genealogy-tree li::after {
+    right: auto; 
+    left: 50%;
     border-left: 2px solid #ccc;
 }
 .genealogy-tree li:only-child::after, .genealogy-tree li:only-child::before {
     display: none;
 }
-.genealogy-tree li:only-child{ 
+.genealogy-tree li:only-child { 
     padding-top: 0;
 }
-.genealogy-tree li:first-child::before, .genealogy-tree li:last-child::after{
+.genealogy-tree li:first-child::before, .genealogy-tree li:last-child::after {
     border: 0 none;
 }
-.genealogy-tree li:last-child::before{
+.genealogy-tree li:last-child::before {
     border-right: 2px solid #ccc;
     border-radius: 0 5px 0 0;
     -webkit-border-radius: 0 5px 0 0;
     -moz-border-radius: 0 5px 0 0;
 }
-.genealogy-tree li:first-child::after{
+.genealogy-tree li:first-child::after {
     border-radius: 5px 0 0 0;
     -webkit-border-radius: 5px 0 0 0;
     -moz-border-radius: 5px 0 0 0;
 }
-.genealogy-tree ul ul::before{
+.genealogy-tree ul ul::before {
     content: '';
-    position: absolute; top: 0; left: 50%;
+    position: absolute; 
+    top: 0; 
+    left: 50%;
     border-left: 2px solid #ccc;
-    width: 0; height: 20px;
+    width: 0; 
+    height: 20px;
 }
-.genealogy-tree li a{
+.genealogy-tree li a {
     text-decoration: none;
     color: #666;
     font-family: arial, verdana, tahoma;
@@ -93,15 +96,30 @@
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
 }
-
 .genealogy-tree li a:hover+ul li::after, 
 .genealogy-tree li a:hover+ul li::before, 
 .genealogy-tree li a:hover+ul::before, 
-.genealogy-tree li a:hover+ul ul::before{
+.genealogy-tree li a:hover+ul ul::before {
     border-color:  #fbba00;
 }
 
-/*--------------memeber-card-design----------*/
+/* Special left child positioning */
+.genealogy-tree > ul > li {
+    position: relative;
+}
+
+.genealogy-tree .special-left {
+    position: absolute;
+    top: 0;
+    left: -150px; /* Adjust based on your design */
+}
+
+.genealogy-tree li[data-relation="left"]::before,
+.genealogy-tree li[data-relation="left"]::after {
+    border: none; /* Remove the existing connecting lines */
+}
+
+/*--------------member-card-design----------*/
 .member-view-box {
     width: 100px; /* Set the desired width */
     height: 150px; /* Set the desired height */
@@ -129,6 +147,7 @@
     z-index: 1;
     border: 2px solid #fff; /* White border around the image */
 }
+
 /*-------------------------------------------*/
 body, div, p, h1, h2, h3 {
     text-align: center !important;

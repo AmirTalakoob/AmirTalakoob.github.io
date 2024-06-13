@@ -20,6 +20,11 @@
             function createItem(name1, name2, tag, createNestedUL, dob = "", dod = "") {
                 var listItem = document.createElement('li');
 
+                // Set data-relation attribute if relationType is "left"
+                if (tag === '429') {
+                    listItem.setAttribute('data-relation', 'left');
+                }
+
                 // Create anchor element
                 var anchor = document.createElement('a');
                 anchor.href = "javascript:void(0);";
@@ -44,7 +49,6 @@
                 img.alt = "Member";
                 memberImage.appendChild(img);
 
-
                 // Create member details
                 var memberDetails = document.createElement('div');
                 memberDetails.className = "member-details";
@@ -56,18 +60,18 @@
                 nameElement.innerHTML = name1 + "<br>" + name2;
                 memberDetails.appendChild(nameElement);
 
-                if (dob!==""){
+                if (dob !== "") {
                     var dateElement = document.createElement('h3');
                     dateElement.className = "date-details";
                     dateElement.innerHTML = "(" + dob + "-" + dod + ")";
                     nameElement.appendChild(dateElement);
-                }
-                else {
+                } else {
                     var dateElement = document.createElement('h3');
                     dateElement.className = "date-details";
                     dateElement.innerHTML = dob + dod;
                     nameElement.appendChild(dateElement);
                 }
+
                 // Check if nested UL should be created
                 if (createNestedUL) {
                     // Create nested UL element
@@ -80,6 +84,7 @@
 
                 return listItem;
             }
+            
 
 
             document.getElementById('origin').appendChild(createItem('میرزا ابراهیم خان', '', '1', true));
@@ -356,7 +361,7 @@
             document.getElementById('172').appendChild(createItem('زینب', '', '173', false));
             document.getElementById('172').appendChild(createItem('ابوالفضل', '', '174', false));
 
-            document.getElementById('116').appendChild(createItem('غلامحسین میرکوشش', '', '175', true));
+            document.getElementById('116').appendChild(createItem('ابراهیم طلاکوب', '', '175', true));
 
             document.getElementById('175').appendChild(createItem('علی', '', '176', true));
 
@@ -556,7 +561,7 @@
             document.getElementById('295').appendChild(createItem('زینب', '', '296', false));
             document.getElementById('295').appendChild(createItem('ابوالفضل', '', '297', false));
 
-            document.getElementById('239').appendChild(createItem('غلامحسین میرکوشش', '', '298', true));
+            document.getElementById('239').appendChild(createItem('ابراهیم طلاکوب', '', '298', true));
 
             document.getElementById('298').appendChild(createItem('علی', '', '299', true));
 
@@ -611,21 +616,27 @@
 
             document.getElementById('322').appendChild(createItem('محمدکاظم عسکریه', '', '330', true));
 
+            document.getElementById('322').appendChild(createItem('ملک ناز ملک زاده', '', '429', true, "", ""));
+
+            document.getElementById('429').appendChild(createItem('محمدرضا', '', '430', false));
+            document.getElementById('429').appendChild(createItem('پریناز', '', '431', false));
+            document.getElementById('429').appendChild(createItem('سروناز', '', '432', false));
+
             document.getElementById('330').appendChild(createItem('محمد مهدی', '', '331', true));
             document.getElementById('330').appendChild(createItem('هما', '', '332', true));
             document.getElementById('330').appendChild(createItem('محمد هادی', '', '333', true));
 
-            document.getElementById('331').appendChild(createItem('؟؟؟', '', '334', true));
+            document.getElementById('331').appendChild(createItem('دس پولا', '', '334', true));
 
             document.getElementById('334').appendChild(createItem('عنبر', '', '335', false));
 
             document.getElementById('332').appendChild(createItem('افشین ددفروز', '', '336', true));
 
-            document.getElementById('336').appendChild(createItem('؟؟؟', '', '337', false));
-            document.getElementById('336').appendChild(createItem('؟؟؟', '', '338', false));
-            document.getElementById('336').appendChild(createItem('؟؟؟', '', '339', false));
+            document.getElementById('336').appendChild(createItem('ایمان', '', '337', false));
+            document.getElementById('336').appendChild(createItem('رکسانا', '', '338', false));
+            //document.getElementById('336').appendChild(createItem('؟؟؟', '', '339', false));
 
-            document.getElementById('333').appendChild(createItem('؟؟؟', '', '340', true));
+            document.getElementById('333').appendChild(createItem('آتوسا ؟؟؟', '', '340', true));
 
             document.getElementById('340').appendChild(createItem('هلیا', '', '341', false));
 
@@ -752,7 +763,7 @@
 
             document.getElementById('412').appendChild(createItem('آتنا', '', '413', false));
 
-            document.getElementById('3').appendChild(createItem('؟؟؟', '', '414', true));
+            /*document.getElementById('3').appendChild(createItem('؟؟؟', '', '414', true));
 
             document.getElementById('414').appendChild(createItem('کبری خانم', '', '415', true));
             document.getElementById('414').appendChild(createItem('خانم اقدس', '', '416', true));
@@ -773,7 +784,7 @@
 
             document.getElementById('416').appendChild(createItem('؟؟؟', '', '426', true));
 
-            document.getElementById('426').appendChild(createItem('پروین', '', '427', false));
+            document.getElementById('426').appendChild(createItem('پروین', '', '427', false));*/
         </script>
     </body>
 </html>
