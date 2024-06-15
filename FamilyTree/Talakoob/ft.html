@@ -788,6 +788,30 @@
             document.getElementById('416').appendChild(createItem('؟؟؟', '', '426', true));
 
             document.getElementById('426').appendChild(createItem('پروین', '', '427', false));*/
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const playButton = document.getElementById("playButton");
+                const audioTrack = document.getElementById("audioTrack");
+
+                playButton.addEventListener("click", function() {
+                    if (audioTrack.paused) {
+                        audioTrack.play();
+                    } else {
+                        audioTrack.pause();
+                    }
+                });
+            });
         </script>
+        <div class="container">
+            <button class="play-button" id="playButton">
+                <svg viewBox="0 0 24 24">
+                    <polygon points="5,3 19,12 5,21" />
+                </svg>
+            </button>
+            <audio id="audioTrack">
+                <source src="../bg_audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </body>
 </html>
