@@ -202,7 +202,7 @@
             document.getElementById('69').appendChild(createItem('تارا ایزدیار', '', '72', true));
 
             document.getElementById('72').appendChild(createItem('سید آدرین', '', '73', false));
-            document.getElementById('72').appendChild(createItem('؟؟؟', '', '144', false));
+            document.getElementById('72').appendChild(createItem('سید ایدن', '', '144', false));
 
             document.getElementById('36').appendChild(createItem('منصوره رفشا', '', '74', true, "\u06F1\u06F3\u06F1\u06F0", "\u06F1\u06F3\u06F8\u06F0"));
 
@@ -327,6 +327,30 @@
 
             document.getElementById('99').appendChild(createItem('سحر ؟؟؟', '', '146', false));
 
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const playButton = document.getElementById("playButton");
+                const audioTrack = document.getElementById("audioTrack");
+
+                playButton.addEventListener("click", function() {
+                    if (audioTrack.paused) {
+                        audioTrack.play();
+                    } else {
+                        audioTrack.pause();
+                    }
+                });
+            });
         </script>
+        <div class="container">
+            <button class="play-button" id="playButton">
+                <svg viewBox="0 0 24 24">
+                    <polygon points="5,3 19,12 5,21" />
+                </svg>
+            </button>
+            <audio id="audioTrack">
+                <source src="../bg_audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </body>
 </html>
